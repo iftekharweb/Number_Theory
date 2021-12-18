@@ -21,7 +21,7 @@ ll BinaryExp(ll n, ll k)
 }
 
 Explanation:
-res		base	power
+res		base	        power
 1		2		13
 2 		2 		12
 2		4		6
