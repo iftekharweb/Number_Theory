@@ -10,12 +10,13 @@ ll power(ll n, ll k)
 
 2. Time Complexity: O(log n)  |  Optimized Approch
 
-ll BinaryExp(ll n, ll k)
+ll BinaryExp(ll a, ll b) 
 {
         ll res = 1;
-        while(k) {
-                if(k%2) res*=n , k--;
-                else n*=n, k/=2;
+        while (b) {
+            if(b%2) res=(res*a)%MOD;
+            a = (a*a)%MOD;
+            b/=2;
         }
         return res;
 }
