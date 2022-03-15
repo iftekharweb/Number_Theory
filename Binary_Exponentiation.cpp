@@ -1,3 +1,7 @@
+(i)   if (a-b) overflows ll, =>  ans = ((a-b)%MOD + MOD)%MOD
+(ii)  if (a+b) overflows ll, =>  ans = (a+b)%MOD
+(iiI) if (a*b) overflows ll, =>  ans = (a*b)%MOD
+
 1. Time Complexity: O(n)  | Brute Force Approch
 
 ll power(ll n, ll k)
