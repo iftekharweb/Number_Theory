@@ -14,3 +14,35 @@ void seive()
         }
         for(int i=1; i<=maxN; i++) if(markPrime[i]) primes.push_back(i);
 }
+
+
+2. BEST with minimum prime factors
+
+vector<bool> markPrime(N,true);
+vector<int> primes , minFactor(N,0);
+
+void Seive()
+{
+        int maxN = N-1;
+        markPrime[1] = false;
+        minFactor[2] = 2;
+        for(int i=4; i<=maxN; i+=2) {
+            markPrime[i] = false;
+            minFactor[i] = 2;
+        }
+        for(int i=3; i*i<=maxN; i+=2){
+            if(markPrime[i]) {
+                for(int j=i*i; j<=maxN; j+=i) {
+                    markPrime[j] = false;
+                    if(!minFactor[j]) minFactor[j] = i;
+                }
+            }
+        }
+        for(int i=1; i<=maxN; i++) {
+            if(markPrime[i]) {
+                primes.push_back(i);
+                minFactor[i] = i;
+            }
+        }
+        return;
+}
